@@ -3,11 +3,7 @@ while ($true) {
     $powerStatus = (Get-WmiObject -Class Win32_Battery).BatteryStatus
     $cpuLoad = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue
 
-    # Matikan Auto-Brightness tiap ganti pwrplan
-    powercfg -setdcvalueindex $targetPlan SUB_VIDEO ADAPTBRIGHT 0
-    powercfg -setacvalueindex $targetPlan SUB_VIDEO ADAPTBRIGHT 0
-
-    # Ambang batas
+    # Ambang batas / Threshold
     $cpuThreshold = 25  # persen
     $onBattery = ($powerStatus -eq 1)  # 1 = on battery, 2 = charging/plugged in
 
@@ -18,16 +14,23 @@ while ($true) {
 
     if ($onBattery -and $cpuLoad -lt $cpuThreshold) {
         # Hemat saat idle + baterai
-        powercfg /s $powerSaver
+        $targetPlan = $powerSaver
     }
     elseif ($cpuLoad -ge $cpuThreshold) {
         # Performa saat CPU aktif
-        powercfg /s $performance
+        $targetPlan = $performance
     }
     else {
         # Default ke balanced
-        powercfg /s $balanced
+        $targetPlan = $balanced
     }
+
+    # Matikan Auto-Brightness
+    powercfg -setdcvalueindex $targetPlan SUB_VIDEO ADAPTBRIGHT 0
+    powercfg -setacvalueindex $targetPlan SUB_VIDEO ADAPTBRIGHT 0
+
+    # Apply plan
+    powercfg /s $targetPlan
 
     Start-Sleep -Seconds 5
 }
