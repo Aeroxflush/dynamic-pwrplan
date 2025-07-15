@@ -3,8 +3,8 @@
 💡 Dynamic power plan switcher buat Windows berdasarkan **CPU load dan status charger**, cocok buat kamu yang:
 
 - Mau hemat baterai saat idle
-- Mau performa maksimal saat gaming
-~~- Mau laptop nggak rewel ganti brightness tiap ganti plan~~ (mungkin nanti)
+- Mau performa maksimal saat gaming  
+~~Mau laptop nggak rewel ganti brightness tiap ganti plan~~ (mungkin nanti)
 
 ### ✨ Fitur
 
