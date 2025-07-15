@@ -1,10 +1,10 @@
 # ⚡ Dynamic Power Plan
 
-Sistem ini secara otomatis mengganti power plan berdasarkan **CPU load dan status charger**, cocok buat kamu yang:
+💡 Dynamic power plan switcher buat Windows berdasarkan **CPU load dan status charger**, cocok buat kamu yang:
 
 - Mau hemat baterai saat idle
 - Mau performa maksimal saat gaming
-- Mau laptop nggak rewel ganti brightness tiap ganti plan
+~~- Mau laptop nggak rewel ganti brightness tiap ganti plan~~ (mungkin nanti)
 
 ### ✨ Fitur
 
@@ -49,7 +49,7 @@ powercfg /l
 
 ### 3. Build
 1. Buka project dengan **Visual Studio**
-2. Pastikan `dynamic_powerplan.ps1` sudah ditambahkan sebagai **Embedded Resource**
+2. Pastikan `dynamic_powerplan.ps1` sudah ditambahkan sebagai **Embedded Resource** (cek di properties-nya)
 3. Tekan `Ctrl + Shift + B` untuk build
 4. Ambil file `.exe` dari folder `bin\Release` atau `bin\Debug`
 
@@ -59,9 +59,8 @@ powercfg /l
 - Buat task baru:
   - Trigger: **At logon / At startup**
   - Action:
-    ```
-    powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Arahkan\ke\file.exe"
-    ```
+    Start a program → `"C:\Arahkan\ke\file.exe"`
+    
   - Pastikan opsi “Run with highest privileges” dicentang
 
 ---
@@ -71,5 +70,5 @@ powercfg /l
 ✔️ Works?  
 ✔️ Aman jalan di background ↘  
 ⚡️ Ritual <sub>(Optimalisasi)</sub> biar script gak kesambet sama AV kayak Kaspersky  
-❌ Tanpa brightness tiba-tiba kayak flashbang (mungkin nanti)  
+❌ Tanpa brightness yg tiba-tiba berubah kayak flashbang (mungkin nanti)  
 ❌ Disuruh mak cuci piring
