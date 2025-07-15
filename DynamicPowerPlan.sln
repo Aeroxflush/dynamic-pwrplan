@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicPowerPlan", "DynamicPowerPlan.csproj", "{DEBD8BDD-C40A-4770-9EF2-AA808547B16C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEBD8BDD-C40A-4770-9EF2-AA808547B16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBD8BDD-C40A-4770-9EF2-AA808547B16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBD8BDD-C40A-4770-9EF2-AA808547B16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBD8BDD-C40A-4770-9EF2-AA808547B16C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45239943-9B06-4E79-86CB-E3952583132A}
+	EndGlobalSection
+EndGlobal

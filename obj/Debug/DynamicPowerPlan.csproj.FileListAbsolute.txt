@@ -1,0 +1,10 @@
+D:\dyna-pwrplan\DynamicPowerPlan\bin\Debug\DynamicPowerPlan.exe.config
+D:\dyna-pwrplan\DynamicPowerPlan\bin\Debug\DynamicPowerPlan.exe
+D:\dyna-pwrplan\DynamicPowerPlan\bin\Debug\DynamicPowerPlan.pdb
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.csproj.AssemblyReference.cache
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.Properties.Resources.resources
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.csproj.GenerateResource.cache
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.csproj.CoreCompileInputs.cache
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.exe
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.pdb
+D:\dyna-pwrplan\DynamicPowerPlan\obj\Debug\DynamicPowerPlan.exe.config
