@@ -10,21 +10,30 @@ namespace DynamicPowerPlan
         [STAThread]
         static void Main()
         {
+            string tempScript = Path.Combine(Path.GetTempPath(), "dynamic_powerplan.ps1");
+
             try
             {
-                // Path temp buat nyimpan sementara script
-                string tempScript = Path.Combine(Path.GetTempPath(), "dynamic_powerplan.ps1");
+                // Hapus jika temp file udah ada
+                if (File.Exists(tempScript))
+                    File.Delete(tempScript);
 
                 // Ambil isi resource .ps1 yang di-embed
-                using (Stream stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("DynamicPowerPlan.dynamic_powerplan.ps1"))
-                using (StreamReader reader = new StreamReader(stream))
+                var resourceName = "DynamicPowerPlan.dynamic_powerplan.ps1";
+                using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
                 {
-                    File.WriteAllText(tempScript, reader.ReadToEnd());
+                    if (stream == null)
+                        throw new FileNotFoundException("Embedded script tidak ditemukan.", resourceName);
+
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        // Script ditulis sementara ke folder Temp
+                        File.WriteAllText(tempScript, reader.ReadToEnd());
+                    }
                 }
 
-                // Jalankan script dari file sementara
-                ProcessStartInfo psi = new ProcessStartInfo
+                // Jalankan script dari folder Temp
+                var psi = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
                     Arguments = $"-ExecutionPolicy Bypass -WindowStyle Hidden -File \"{tempScript}\"",
@@ -37,8 +46,8 @@ namespace DynamicPowerPlan
             }
             catch (Exception ex)
             {
-                File.AppendAllText(Path.Combine(Path.GetTempPath(), "launcher_error.log"),
-                    $"[{DateTime.Now}] {ex.ToString()}\n");
+                File.AppendAllText(Path.Combine(Path.GetTempPath(), "dynamic-Pwrplan_error.log"),
+                    $"[{DateTime.Now}] {ex}\n");
             }
         }
     }
