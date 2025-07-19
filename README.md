@@ -4,7 +4,6 @@
 <sub>**Suka atur powerplan sendiri, lol*</sub>
 - Mau hemat baterai saat idle 
 - Mau performa maksimal saat gaming  
-~~Mau laptop nggak rewel ganti brightness tiap ganti plan~~ (mungkin nanti)
 
 ## Inspirasi
 - Power plan bawaan Windows sering gak sesuai harapan, bikin frustasi sejak dulu punya laptop
@@ -12,12 +11,13 @@
 - [Postingan Reddit](https://www.reddit.com/r/Amd/comments/hine0i/i_made_a_dynamic_powerplan_windows/)
 
 ### ✨ Fitur
-
 - Mode silent, gak ada lagi tuh nongol console macam PC lagi kena malware
 - **Auto-switch power plan tiap 5 detik**
 - Responsif dengan status baterai dan CPU usage
 - Tanpa dependensi eksternal (PowerShell langsung di-embed ke EXE)
+
 ---
+
 ### 🧩 Struktur Plan
 
 | Base Plan        | Tujuan               | Ciri Khas                           |
@@ -71,9 +71,8 @@ powercfg /l
 ---
 
 ### ✅ Status
-
 ✔️ Works?  
 ✔️ Aman jalan di background ↘  
 ⚡️ Ritual <sub>(Optimalisasi)</sub> biar script gak kesambet sama AV kayak Kaspersky  
-❌ Tanpa brightness yg tiba-tiba meledak kayak flashbang (mungkin nanti)  
+✔️ Tanpa brightness yg tiba-tiba meledak kayak flashbang (cihuy udah bisa, tapi masih perlu improvement)  
 ❌ Disuruh mak cuci piring
