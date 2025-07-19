@@ -1,4 +1,3 @@
-
 while ($true) {
     $powerStatus = (Get-WmiObject -Class Win32_Battery).BatteryStatus
     $cpuLoad = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples.CookedValue
@@ -31,6 +30,10 @@ while ($true) {
 
     # Apply plan
     powercfg /s $targetPlan
+
+    # Set brightness secara paksa setelah ganti plan
+    $brightnessLevel = 30  # Bisa kamu sesuaikan
+    (Get-WmiObject -Namespace root/wmi -Class WmiMonitorBrightnessMethods).WmiSetBrightness(1, $brightnessLevel)
 
     Start-Sleep -Seconds 5
 }
